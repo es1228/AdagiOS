@@ -50,7 +50,7 @@ const useBattery = () => {
 					fetchBatteryInfo,
 				);
 
-				setBatteryLevel(level);
+				setBatteryLevel(Math.round(level));
 
 				// cleanup
 				return () => {

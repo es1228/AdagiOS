@@ -1,3 +1,4 @@
+import BatteryWidget from "../components/BatteryWidget";
 import Button from "../components/Button";
 import ProfileCard from "../components/ProfileCard";
 import TimeContainer from "../components/TimeContainer";
@@ -17,6 +18,7 @@ const LoginPage = () => {
 					size={48}
 				/>
 			</div>
+			<BatteryWidget />
 		</div>
 	);
 };
