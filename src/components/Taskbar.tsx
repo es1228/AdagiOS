@@ -1,9 +1,9 @@
-import type { AppName } from "../App";
+import type { AppNames } from "../App";
 import Button from "./Button";
 
 type TaskbarProps = {
-	apps: AppName[];
-	toggleApp: (app: AppName) => void;
+	apps: AppNames;
+	toggleApp: (app: string) => void;
 };
 
 const Taskbar = ({ apps, toggleApp }: TaskbarProps) => {

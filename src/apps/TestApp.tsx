@@ -1,13 +1,9 @@
 import { useRef, useState } from "react";
 import Draggable from "react-draggable";
 import Titlebar from "../components/Titlebar";
+import type { AppProps } from "../App";
 
-type TestAppProps = {
-	isOpen: boolean;
-	toggleClose: () => void;
-};
-
-const TestApp = ({ isOpen, toggleClose }: TestAppProps) => {
+const TestApp = ({ isOpen, toggleClose }: AppProps) => {
 	const nodeRef = useRef(null);
 
 	if (!isOpen) return null;

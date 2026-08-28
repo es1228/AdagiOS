@@ -2,7 +2,11 @@ import useBattery from "../hooks/useBattery";
 import useClock from "../hooks/useClock";
 import Button from "./Button";
 
-const TopBar = () => {
+type TopBarProps = {
+	activeApp: string;
+}
+
+const TopBar = ({activeApp}: TopBarProps) => {
 	const { time, date } = useClock(true, true);
 
 	// fetch battery level
@@ -11,7 +15,7 @@ const TopBar = () => {
 	return (
 		<div className="bg-on-bg/20 dark:bg-on-bg-dark/40 m-2 flex items-center rounded-full px-4 backdrop-blur-3xl">
 			<div className="mr-auto">
-				<p>Lock Screen</p>
+				<p className="capitalize">{activeApp}</p>
 			</div>
 			<p>
 				{date} {time}
