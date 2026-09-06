@@ -4,9 +4,10 @@ import Button from "./Button";
 
 type TopBarProps = {
 	activeApp: string;
+	onLogout: () => void;
 }
 
-const TopBar = ({activeApp}: TopBarProps) => {
+const TopBar = ({activeApp, onLogout}: TopBarProps) => {
 	const { time, date } = useClock(true, true);
 
 	// fetch battery level
@@ -27,7 +28,7 @@ const TopBar = ({activeApp}: TopBarProps) => {
 					text={batteryLevel.toFixed(0) + "%"}
 				/>
 				<Button
-					onClick={() => {}}
+					onClick={onLogout}
 					icon="power_settings_new"
 				/>
 			</div>

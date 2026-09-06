@@ -1,9 +1,19 @@
-import BatteryWidget from "../components/BatteryWidget";
+import { useEffect } from "react";
 import Button from "../components/Button";
 import ProfileCard from "../components/ProfileCard";
 import TimeContainer from "../components/TimeContainer";
 
-const LoginPage = () => {
+type LoginPageProps = {
+	handleLogin: () => void;
+};
+
+const LoginPage = ({ handleLogin }: LoginPageProps) => {
+	useEffect(() => {
+		window.addEventListener("keydown", handleLogin);
+
+		return () => window.removeEventListener("keydown", handleLogin);
+	}, [handleLogin]);
+
 	return (
 		<div className="h-full w-full">
 			<div className="mx-auto mt-20 w-fit space-y-10 text-center">
@@ -13,12 +23,11 @@ const LoginPage = () => {
 			</div>
 			<div className="fixed bottom-5 left-1/2 -translate-x-1/2">
 				<Button
-					onClick={() => {}}
+					onClick={handleLogin}
 					icon="keyboard_control_key"
 					size={48}
 				/>
 			</div>
-			<BatteryWidget />
 		</div>
 	);
 };

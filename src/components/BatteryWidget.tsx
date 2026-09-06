@@ -15,8 +15,8 @@ const BatteryWidget = () => {
     const nodeRef = useRef(null);
 
 	return (
-		<Draggable nodeRef={nodeRef} bounds="body">
-			<div ref={nodeRef} className="bg-on-bg-secondary/20 dark:bg-on-bg-dark-secondary/40 w-fit rounded-3xl p-4 backdrop-blur-3xl">
+		<Draggable nodeRef={nodeRef}>
+			<div ref={nodeRef} className="bg-on-bg-secondary/20 dark:bg-on-bg-dark-secondary/40 w-fit rounded-3xl p-4 backdrop-blur-3xl ml-2">
 				<div className="flex items-center gap-2">
 					<span
 						className={`icon icon-40 icon-rounded group-hover:icon-filled group-hover:icon-700 transition-all duration-100`}
