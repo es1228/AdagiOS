@@ -17,6 +17,7 @@ const ChessApp = ({ isOpen, isOnTop, toggleClose, onClick }: AppProps) => {
                 onClick={onClick}
             >
                 <Titlebar windowName="Chess" handleClose={toggleClose} />
+                {/* @ts-ignore */}
                 <iframe className="h-9/10 w-full rounded-3xl" src="https://es1228.github.io/Tempo" allow="cross-origin-isolated" credentialless="true"></iframe>
             </div>
         </Draggable>
