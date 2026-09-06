@@ -11,7 +11,9 @@ export type AppNames = ["test", "notes"];
 
 export type AppProps = {
 	isOpen: boolean;
+	isOnTop: boolean;
 	toggleClose: () => void;
+	onClick: () => void;
 };
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
 		notes: false,
 	});
 	const [activeApp, setActiveApp] = useState("Desktop");
+
+	const handleAppClick = (app: string) => setActiveApp(app);
 
 	const updateActiveApp = (app: string, appsOpen: typeof openApps) => {
 		Object.values(appsOpen).every((value) => value === false)
@@ -45,11 +49,15 @@ function App() {
 			<Taskbar apps={["test", "notes"]} toggleApp={toggleApp} />
 			<TestApp
 				isOpen={openApps.test}
+				isOnTop={activeApp === "test"}
 				toggleClose={() => toggleApp("test")}
+				onClick={() => handleAppClick("test")}
 			/>
 			<NotesApp
 				isOpen={openApps.notes}
+				isOnTop={activeApp === "notes"}
 				toggleClose={() => toggleApp("notes")}
+				onClick={() => handleAppClick("notes")}
 			/>
 		</>
 	);
