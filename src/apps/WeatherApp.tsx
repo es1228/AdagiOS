@@ -4,9 +4,9 @@ import Titlebar from "../components/Titlebar";
 import { useRef } from "react";
 
 const WeatherApp = ({ isOpen, isOnTop, toggleClose, onClick }: AppProps) => {
-    const nodeRef = useRef(null);
+	const nodeRef = useRef(null);
 
-    if (!isOpen) return null;
+	if (!isOpen) return null;
 
     return (
         <Draggable nodeRef={nodeRef} cancel=".non-draggable">
@@ -17,6 +17,7 @@ const WeatherApp = ({ isOpen, isOnTop, toggleClose, onClick }: AppProps) => {
                 onClick={onClick}
             >
                 <Titlebar windowName="Weather" handleClose={toggleClose} />
+                {/* @ts-ignore */}
                 <iframe className="h-9/10 w-full rounded-3xl" src="https://es1228.github.io/OpenSky" credentialless="true"></iframe>
             </div>
         </Draggable>

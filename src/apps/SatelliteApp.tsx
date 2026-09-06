@@ -4,7 +4,7 @@ import Titlebar from "../components/Titlebar";
 import { useRef } from "react";
 
 const SatelliteApp = ({ isOpen, isOnTop, toggleClose, onClick }: AppProps) => {
-    const nodeRef = useRef(null);
+	const nodeRef = useRef(null);
 
     if (!isOpen) return null;
 
@@ -17,6 +17,7 @@ const SatelliteApp = ({ isOpen, isOnTop, toggleClose, onClick }: AppProps) => {
                 onClick={onClick}
             >
                 <Titlebar windowName="Satellite Tracker" handleClose={toggleClose} />
+                {/* @ts-ignore */}
                 <iframe className="h-9/10 w-full rounded-3xl" src="https://es1228.github.io/SatTrack" credentialless="true"></iframe>
             </div>
         </Draggable>
