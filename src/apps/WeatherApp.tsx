@@ -17,7 +17,7 @@ const WeatherApp = ({ isOpen, isOnTop, toggleClose, onClick }: AppProps) => {
                 onClick={onClick}
             >
                 <Titlebar windowName="Weather" handleClose={toggleClose} />
-                <iframe className="h-9/10 w-full rounded-3xl" src="https://es1228.github.io/OpenSky"></iframe>
+                <iframe className="h-9/10 w-full rounded-3xl" src="https://es1228.github.io/OpenSky" allow="cross-origin-isolated"></iframe>
             </div>
         </Draggable>
     );

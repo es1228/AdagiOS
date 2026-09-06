@@ -17,7 +17,7 @@ const SatelliteApp = ({ isOpen, isOnTop, toggleClose, onClick }: AppProps) => {
                 onClick={onClick}
             >
                 <Titlebar windowName="Satellite Tracker" handleClose={toggleClose} />
-                <iframe className="h-9/10 w-full rounded-3xl" src="https://es1228.github.io/SatTrack"></iframe>
+                <iframe className="h-9/10 w-full rounded-3xl" src="https://es1228.github.io/SatTrack" allow="cross-origin-isolated"></iframe>
             </div>
         </Draggable>
     );

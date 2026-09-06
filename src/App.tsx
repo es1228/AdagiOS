@@ -63,7 +63,7 @@ function App() {
 
 	return (
 		<>
-			<Background src="https://wallpapercave.com/wp/wp12411230.jpg" />
+			<Background src={`${import.meta.env.BASE_URL}background.jpg`} />
 			{isLoggedIn ? (
 				<>
 					<TopBar activeApp={activeApp} onLogout={() => setIsLoggedIn(false)}/>
